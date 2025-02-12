@@ -24,8 +24,8 @@ public class Category implements Serializable {
 	private String name;
 
 	@JsonIgnore
-	//@ManyToMany(mappedBy = "categories")
-	//private Set<Product> products = new HashSet<>();
+	@ManyToMany(mappedBy = "categories")
+	private Set<Product> products = new HashSet<>();
 	
 	public Category() {
 	}
@@ -52,9 +52,9 @@ public class Category implements Serializable {
 		this.name = name;
 	}
 
-//	public Set<Product> getProducts() {
-//		return products;
-//	}
+	public Set<Product> getProducts() {
+		return products;
+	}
 	
 	@Override
 	public int hashCode() {
